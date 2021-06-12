@@ -44,6 +44,10 @@
             formControlName="data"  
             placeholder="01/01/2021"
         >
+    <app-mensagem-error 
+        [mostrarErro]="verificaValidTouched('data')"
+        msgErro='Data é Obrigatório'>
+    </app-mensagem-error>
     </div>
     <div class="form-group">
         <label 
@@ -61,6 +65,10 @@
         formControlName="preco"
         placeholder="valor:"
         >
+    <app-mensagem-error 
+        [mostrarErro]="verificaValidTouched('valor')"
+        msgErro='Valor é Obrigatório'>
+    </app-mensagem-error>
     </div>
     <div class="botao" style="text-align: center;">
     <button 
