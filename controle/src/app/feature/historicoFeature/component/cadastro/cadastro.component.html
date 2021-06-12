@@ -1,1 +1,76 @@
-<p>cadastro works!</p>
+<div class="center" style="text-align: center;">
+<p>Cadastro Histórico</p>
+</div>
+
+                         <!-- TO-DO LIST -->
+<form  [formGroup]="form" class="form-vertical" (ngSubmit)="onSubmit()" >
+
+    <div class="form-group">
+        <label 
+            for="nome" 
+            class="control-label"
+        >
+            Combustivel
+        </label>
+
+        <input 
+            type="text"
+            class="form-control"
+            [ngClass]="erro('combustivel')"   
+            name="combustivel" 
+            id="combustivel" 
+            formControlName="combustivel" 
+            placeholder="Gasolina / Álcool"   
+        >
+    <app-mensagem-error 
+        [mostrarErro]="verificaValidTouched('combustivel')"
+        msgErro='Nome é Obrigatório'>
+    </app-mensagem-error>
+
+    </div>
+    <div class="form-group">
+        <label 
+            for="combustivel" 
+            class="control-label"
+        >
+            Data
+        </label>
+
+        <input 
+            type="date"
+            class="form-control"  
+            name="data" 
+            id="data" 
+            formControlName="data"  
+            placeholder="01/01/2021"
+        >
+    </div>
+    <div class="form-group">
+        <label 
+        for="preco" 
+        class="control-label"
+        >
+        Preço
+        </label>
+
+        <input 
+        type="text"
+        class="form-control"  
+        name="preco" 
+        id="preco" 
+        formControlName="preco"
+        placeholder="valor:"
+        >
+    </div>
+    <div class="botao" style="text-align: center;">
+    <button 
+        type="submit" 
+        class="btn btn-primary"
+    >
+        Enviar
+    </button>
+</div>
+</form>
+  
+
+<!-- combustivel, data, id, preco -->
