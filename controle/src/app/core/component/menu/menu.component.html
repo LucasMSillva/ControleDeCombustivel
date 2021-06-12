@@ -1,7 +1,6 @@
 <!--MENU-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" (click)="show = !show" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,13 +9,20 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Relatório</a>
-          </li>
+            <a routerLink="/historico" class="nav-link" href="#">Histórico</a></li>
+
+            
+          <li class="nav-item">
+            <a class="nav-link" href="#">Média por Município</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Posto de Combustível</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Calculadora Flex</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" (click)="menu = !menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Minha conta
-            </a>
+              Minha conta</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"  [ngClass]="{'show':show}">
               <li><a class="dropdown-item" href="#">Perfil</a></li>
               <li><a class="dropdown-item" href="#">Veiculos</a></li>
@@ -31,5 +37,3 @@
       </div>
     </div>
   </nav>
-
-  <p>menu works!</p>  

@@ -1,20 +1,20 @@
+import { HistoricoModule } from './feature/historicoFeature/pages/historico/historico.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastroComponent } from './feature/historicoFeature/cadastro/cadastro.component';
 import { MenuComponent } from './core/component/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent,
     MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HistoricoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
