@@ -1,9 +1,9 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HistoricoComponent } from './historico.component';
 import { CadastroModule } from '../../component/cadastro/cadastro.module';
+import { ListaHistoricoModule } from './../../component/lista-historico/lista-historico.module';
 
 
 @NgModule({
@@ -12,7 +12,8 @@ import { CadastroModule } from '../../component/cadastro/cadastro.module';
   ],
   imports: [
     CommonModule,
-    CadastroModule
+    CadastroModule,
+    ListaHistoricoModule
   ]
 })
 export class HistoricoModule { }
