@@ -1,35 +1,35 @@
 <!--MENU-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">FUELGASS</a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" (click)="show = !show" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show':show}" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Relatório</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opções</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Historico</a></li>
-              <li><a class="dropdown-item" href="#">Relatório</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Lembretes</a></li>
+            <a class="nav-link dropdown-toggle" (click)="menu = !menu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Minha conta
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"  [ngClass]="{'show':show}">
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Veiculos</a></li>
+              <li><a class="dropdown-item" href="#">Meus Locais</a></li>
+              <li><a class="dropdown-item" href="#">Locais</a></li>
+              <li><a class="dropdown-item" href="#">conquistas</a></li>
+              <li><a class="dropdown-item" href="#">Sobre</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Minha conta</a>
-          </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Procurar</button>
-        </form>
       </div>
     </div>
   </nav>
-
 
   <p>menu works!</p>  
