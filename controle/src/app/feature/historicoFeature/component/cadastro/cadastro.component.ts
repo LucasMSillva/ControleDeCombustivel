@@ -11,22 +11,22 @@ import { Historico } from './models/historico.class';
 })
 export class CadastroComponent implements OnInit {
 
-  form!: FormGroup;
+  public form!: FormGroup;
 
   constructor() { }
 
-  createForm(historico: Historico){
+  public createForm(historico: Historico){
     this.form = new FormGroup({
       combustivel: new FormControl(historico.combustivel, Validators.required),
       data: new FormControl(historico.data, Validators.required),
       preco: new FormControl(historico.preco, Validators.required),
     })
   }
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.createForm(new Historico());
   }
 
-  onSubmit(){
+  public onSubmit(){
     if (this.form.valid) {
       console.log(this.form.value)
       const dados = {
@@ -42,8 +42,6 @@ export class CadastroComponent implements OnInit {
 public verificaValidTouched(campo:any): boolean {
 
   return !this.form.get(campo)?.valid && !this.form.get(campo)?.touched
-
-  return !campo.valid && campo.touched;
 
 }
 
