@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './core/component/menu/menu.component';
 import { DistribuidoraComponent } from './feature/distribuidoraFeature/pages/distribuidora/distribuidora.component';
 import { ListDistribuidoraComponent } from './feature/distribuidoraFeature/component/list-distribuidora/list-distribuidora.component';
+import { HistoricoService } from './feature/historicoFeature/service/historico.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ListDistribuidoraComponent } from './feature/distribuidoraFeature/compo
     AppRoutingModule,
     HistoricoModule
   ],
-  providers: [],
+  providers: [HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
