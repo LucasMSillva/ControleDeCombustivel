@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CadastroComponent } from './cadastro.component';
 import { MensagemErrorModule } from './../../../../shared/mensagem-error/mensagem-error.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MensagemErrorModule } from './../../../../shared/mensagem-error/mensage
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MensagemErrorModule
+    MensagemErrorModule,
+    HttpClientModule
   ],
   exports: [ 
     CadastroComponent

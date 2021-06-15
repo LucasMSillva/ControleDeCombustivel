@@ -1,3 +1,4 @@
+import { HistoricoService } from './../../service/historico.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
@@ -12,7 +13,7 @@ export class CadastroComponent implements OnInit {
 
   public form!: FormGroup;
 
-  constructor() { }
+  constructor(private HistoricoService:HistoricoService) { }
 
   public createForm(historico: Historico){
      this.form = new FormGroup({
@@ -28,12 +29,14 @@ export class CadastroComponent implements OnInit {
 
   public onSubmit(){
     if (this.form.valid) {
-      console.log(this.form.value)
       const dados = {
         combustivel: this.form.get('combustivel')?.value,
         data: this.form.get('data')?.value,
-        preco: this.form.get('preco')?.value
-    }
+        preco: this.form.get('preco')?.value, 
+        
+         formatter: Intl.DateTimeFormat("pt-BR",{})
+}
+this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, mzr') }, (error) => { console.log(error)})
     this.form.reset()
     return;
   }
@@ -53,4 +56,9 @@ public erro(campo:any): any {
   'has-feedback': this.verificaValidTouched(campo) 
   }
  }
+ public dataBrasileira(){
+ let data_americana = "2020-12-30";
+ let data_brasileira = data_americana.split('-').reverse().join('/');
+ console.log(data_americana)
+}
 }
