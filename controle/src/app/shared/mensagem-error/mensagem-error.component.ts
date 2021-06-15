@@ -9,6 +9,7 @@ export class MensagemErrorComponent implements OnInit {
   
   @Input() msgErro!: string;
   @Input() mostrarErro!: boolean;
+  
   constructor() { }
 
   ngOnInit(): void {

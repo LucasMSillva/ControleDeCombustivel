@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
-import { Historico as historicoInterface} from './models/historico'
 import { Historico } from './models/historico.class';
 
 @Component({
@@ -16,12 +15,13 @@ export class CadastroComponent implements OnInit {
   constructor() { }
 
   public createForm(historico: Historico){
-    this.form = new FormGroup({
-      combustivel: new FormControl(historico.combustivel, Validators.required),
-      data: new FormControl(historico.data, Validators.required),
-      preco: new FormControl(historico.preco, Validators.required),
-    })
-  }
+     this.form = new FormGroup({
+     combustivel: new FormControl(historico.combustivel,Validators.required),
+     data: new FormControl(historico.data,Validators.required),
+     preco: new FormControl(historico.preco,Validators.required)
+   })
+ }
+
   public ngOnInit(): void {
     this.createForm(new Historico());
   }
@@ -39,10 +39,12 @@ export class CadastroComponent implements OnInit {
   }
 }
 
-public verificaValidTouched(campo:any): boolean {
+public verificaValidTouched(campo: string) {
 
-  return !this.form.get(campo)?.valid && !this.form.get(campo)?.touched
-
+  return(
+     !this.form.get(campo)!.valid && 
+     (this.form.get(campo)!.touched || this.form.get(campo)!.dirty)
+  )
 }
 
 public erro(campo:any): any {
