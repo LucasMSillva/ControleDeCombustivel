@@ -29,14 +29,15 @@ export class CadastroComponent implements OnInit {
 
   public onSubmit(){
     if (this.form.valid) {
-      const dados = {
+      const data = this.form.get('data')?.value
+      const newData = data.split('-').reverse().join('/');
+      const dados = { 
         combustivel: this.form.get('combustivel')?.value,
-        data: this.form.get('data')?.value,
+        data: newData,
         preco: this.form.get('preco')?.value, 
-        
-         formatter: Intl.DateTimeFormat("pt-BR",{})
 }
-this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, mzr') }, (error) => { console.log(error)})
+
+this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, varão') }, (error) => { console.log(error)})
     this.form.reset()
     return;
   }
@@ -56,9 +57,4 @@ public erro(campo:any): any {
   'has-feedback': this.verificaValidTouched(campo) 
   }
  }
- public dataBrasileira(){
- let data_americana = "2020-12-30";
- let data_brasileira = data_americana.split('-').reverse().join('/');
- console.log(data_americana)
-}
 }
