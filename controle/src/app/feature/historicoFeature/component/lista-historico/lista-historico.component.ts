@@ -21,7 +21,7 @@ export class ListaHistoricoComponent implements OnInit {
     this.HistoricoService.list()
     .subscribe(
       (res) => {
-        this.dados = res.sort(function (a:number, b:number) {
+        this.dados = res.sort(function (a:any, b:any) {
           return a.id - b.id;
         })
         this.dados .reverse();
@@ -29,5 +29,4 @@ export class ListaHistoricoComponent implements OnInit {
       
   }
 }
-
 

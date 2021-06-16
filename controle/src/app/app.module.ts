@@ -23,6 +23,9 @@ import { HistoricoService } from './feature/historicoFeature/service/historico.s
     AppRoutingModule,
     HistoricoModule
   ],
+  exports: [
+    HistoricoService
+  ],
   providers: [HistoricoService],
   bootstrap: [AppComponent]
 })

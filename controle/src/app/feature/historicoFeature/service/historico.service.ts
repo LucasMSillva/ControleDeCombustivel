@@ -1,7 +1,7 @@
-import { Historico } from './../component/cadastro/models/historico';
-import { FormGroup } from '@angular/forms';
-import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core"
 import { HttpClient } from '@angular/common/http';
+
+import { Historico } from './../component/cadastro/models/historico';
 import { Observable } from "rxjs";
 
 
@@ -13,6 +13,9 @@ export class HistoricoService{
     constructor(private http: HttpClient){}
 
     public list(): Observable<any>{
+        return this.http.get(this.API);
+    }
+    public remove(): Observable<any>{
         return this.http.get(this.API);
     }
 

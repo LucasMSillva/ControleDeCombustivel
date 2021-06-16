@@ -5,6 +5,7 @@ import { ListaHistoricoComponent } from './lista-historico.component';
 
 
 
+
 @NgModule({
   declarations: [
     ListaHistoricoComponent
