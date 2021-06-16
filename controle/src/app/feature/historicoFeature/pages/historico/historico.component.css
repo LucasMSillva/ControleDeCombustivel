@@ -1,0 +1,11 @@
+#lista{
+    padding-bottom: 40px;
+    background-color:aquamarine; 
+    height: 550px;
+    width: 600px;
+    overflow: auto;
+}
+
+body {
+    position: relative;
+  }

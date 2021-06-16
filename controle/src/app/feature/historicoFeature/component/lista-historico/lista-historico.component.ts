@@ -1,4 +1,8 @@
+import { FactoryTarget } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+
+import { HistoricoService } from '../../service/historico.service';
+
 
 @Component({
   selector: 'app-lista-historico',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaHistoricoComponent implements OnInit {
 
-  constructor() { }
+  public dados: any;
+
+  constructor(private HistoricoService:HistoricoService) {}
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  public getAll(): void {
+    this.HistoricoService.list()
+    .subscribe(
+      (res) => {
+        this.dados = res
+      });
+  }
 }
+

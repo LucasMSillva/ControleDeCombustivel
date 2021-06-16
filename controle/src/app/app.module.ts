@@ -8,7 +8,7 @@ import { MenuComponent } from './core/component/menu/menu.component';
 import { DistribuidoraComponent } from './feature/distribuidoraFeature/pages/distribuidora/distribuidora.component';
 import { ListDistribuidoraComponent } from './feature/distribuidoraFeature/component/list-distribuidora/list-distribuidora.component';
 import { HistoricoService } from './feature/historicoFeature/service/historico.service';
-import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,14 +16,14 @@ import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
     MenuComponent,
     ListDistribuidoraComponent,
     DistribuidoraComponent,
-    LocalDateTimePipe,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HistoricoModule
   ],
-  providers: [HistoricoService,LocalDateTimePipe],
+  providers: [HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

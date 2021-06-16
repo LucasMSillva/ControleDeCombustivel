@@ -1,5 +1,5 @@
 import { HistoricoService } from './../../service/historico.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
 import { Historico } from './models/historico.class';
@@ -36,11 +36,10 @@ export class CadastroComponent implements OnInit {
         data: newData,
         preco: this.form.get('preco')?.value, 
 }
-
-this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, varão') }, (error) => { console.log(error)})
+    this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, varão') }, (error) => { console.log(error)})
     this.form.reset()
     return;
-  }
+}
 }
 
 public verificaValidTouched(campo: string) {
@@ -58,3 +57,4 @@ public erro(campo:any): any {
   }
  }
 }
+ 

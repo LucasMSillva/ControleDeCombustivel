@@ -1,16 +1,22 @@
+import { Historico } from './../component/cadastro/models/historico';
+import { FormGroup } from '@angular/forms';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 
 
-
-@Injectable()
+@Injectable({ providedIn:'root' })
 export class HistoricoService{
+
+    private readonly API = 'https://combustivelapp.herokuapp.com/api/historico';
+
     constructor(private http: HttpClient){}
 
-    public postPutCombustivel = (dados: any): Observable<any> => {
+    public list(){
+        return this.http.get(this.API);
+    }
 
-        return this.http.post<any>(`https://combustivelapp.herokuapp.com/api/historico`, dados)
-
-}
+    public postPutCombustivel = (dados: Historico): Observable<Historico> => {
+        return this.http.post<Historico>(this.API, dados)
+    }
 }

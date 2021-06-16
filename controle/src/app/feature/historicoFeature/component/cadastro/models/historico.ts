@@ -1,6 +1,6 @@
 export interface Historico {
  combustivel:string;
  data:string;
- id:number;
+ id?:number;
  preco:string;
 }
