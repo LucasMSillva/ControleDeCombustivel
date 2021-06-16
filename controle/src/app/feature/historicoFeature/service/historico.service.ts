@@ -12,7 +12,7 @@ export class HistoricoService{
 
     constructor(private http: HttpClient){}
 
-    public list(){
+    public list(): Observable<any>{
         return this.http.get(this.API);
     }
 
