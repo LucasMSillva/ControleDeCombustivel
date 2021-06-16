@@ -25,6 +25,7 @@ export class ListaHistoricoComponent implements OnInit {
       (res) => {
         this.dados = res
       });
+      
   }
 }
 
