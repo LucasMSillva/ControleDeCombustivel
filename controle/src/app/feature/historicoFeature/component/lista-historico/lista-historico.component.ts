@@ -1,7 +1,7 @@
-import { Historico } from './../cadastro/models/historico.class';
 import { Component, OnInit } from '@angular/core';
 
 import { HistoricoService } from '../../service/historico.service';
+
 
 @Component({
   selector: 'app-lista-historico',
@@ -10,7 +10,7 @@ import { HistoricoService } from '../../service/historico.service';
 })
 export class ListaHistoricoComponent implements OnInit {
 
-  public dados: Array<Historico> = [];
+  dados: any;
 
   constructor(private HistoricoService:HistoricoService) {}
 
@@ -21,11 +21,10 @@ export class ListaHistoricoComponent implements OnInit {
     this.HistoricoService.list()
     .subscribe(
       (res) => {
-        this.dados = res.sort(function (a, b) {
+        this.dados = res.sort(function (a:number, b:number) {
           return a.id - b.id;
         })
         this.dados .reverse();
-        // this.dados.sort()
       });
       
   }
