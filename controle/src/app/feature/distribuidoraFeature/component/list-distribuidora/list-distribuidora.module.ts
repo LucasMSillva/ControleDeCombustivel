@@ -9,6 +9,9 @@ import { ListDistribuidoraComponent } from './list-distribuidora.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ListDistribuidoraComponent
   ]
 })
 export class ListDistribuidoraModule { }

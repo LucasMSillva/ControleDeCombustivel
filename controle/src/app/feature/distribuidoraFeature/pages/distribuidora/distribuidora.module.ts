@@ -13,7 +13,7 @@ import { DistribuidoraComponent } from './distribuidora.component';
     ListDistribuidoraModule,
   ],
   exports:[
-    DistribuidoraComponent
+    DistribuidoraComponent,
   ]
 })
 export class DistribuidoraModule { }

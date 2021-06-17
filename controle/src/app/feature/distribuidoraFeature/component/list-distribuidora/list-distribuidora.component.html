@@ -1,5 +1,5 @@
 <div class="center" style="text-align: center;">
-    <p>List Distribuidora.</p>
+    <p>Lista histórico.</p>
 </div>
 
 <div class="container">
@@ -8,24 +8,18 @@
         <div 
         class="ms-2 me-auto"
         >
+            <div class="fw-bold"> bandeira: {{ dado.bandeira }} </div>  
+            <div class="fw-bold"> codInstalacao: {{ dado.codInstalacao }} </div>      
+            <div class="fw-bold"> dataColeta: {{ dado.dataColeta }} </div>    
             <div class="fw-bold"> ID: {{ dado.id }} </div>
-            <div class="fw-bold"> Combustivel: {{ dado.combustivel }} </div>
-            <div class="fw-bold">  Data: {{ dado.data }} </div>
-            <div class="fw-bold"> Preço: {{ dado.preco }} </div>      
+            <div class="fw-bold"> municipio: {{ dado.municipio }} </div> 
+            <div class="fw-bold"> produto: {{ dado.produto }} </div>
+            <div class="fw-bold"> revendedora: {{ dado.revendedora }} </div> 
+            <div class="fw-bold"> siglaEstado: {{ dado.siglaEstado }} </div> 
+            <div class="fw-bold"> siglaRegiao: {{ dado.siglaRegiao }} </div> 
+            <div class="fw-bold"> unidadeMedida: {{ dado.unidadeMedida }} </div> 
+            <div class="fw-bold"> valorCompra: {{ dado.valorCompra }} </div> 
+            <div class="fw-bold"> valorVenda: {{ dado.valorVenda }} </div> 
         </div>
-
-    <button class="float-right"
-        type="button"
-        class="btn btn-outline-danger  mb-1 btn-sm" 
-        (click)="delete(dado.id)">
-        deletar
-    </button>
-       <button class="float-right"
-       type="button"
-       class="btn btn-outline-danger  mb-1 btn-sm" 
-       (click)="visualiza(dado.id)">
-       visualizar
-    </button>
-
     </li>
 </div>
