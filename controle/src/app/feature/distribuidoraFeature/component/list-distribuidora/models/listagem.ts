@@ -12,5 +12,5 @@ export interface Listagem {
     valorCompra:number;
     valorVenda:number;
     preco:string;
-   }
+}
    
