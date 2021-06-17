@@ -14,6 +14,11 @@ import { ListaHistoricoModule } from './../../component/lista-historico/lista-hi
     CommonModule,
     CadastroModule,
     ListaHistoricoModule
+  ],
+  exports: [
+    CommonModule,
+    CadastroModule,
+    ListaHistoricoModule
   ]
 })
 export class HistoricoModule { }

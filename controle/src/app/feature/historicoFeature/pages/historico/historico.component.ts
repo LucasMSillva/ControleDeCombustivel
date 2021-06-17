@@ -1,4 +1,3 @@
-import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

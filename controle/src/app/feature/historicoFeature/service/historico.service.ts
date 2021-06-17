@@ -15,11 +15,19 @@ export class HistoricoService{
     public list(): Observable<any>{
         return this.http.get(this.API);
     }
-    public remove(): Observable<any>{
-        return this.http.get(this.API);
-    }
 
     public postPutCombustivel = (dados: Historico): Observable<Historico> => {
         return this.http.post<Historico>(this.API, dados)
+    }
+
+    public delete = (id: number): Observable<any> => {
+        return this.http.delete(`${this.API}/${id}`);
+    }
+
+    public getById = (dadoid: number): Observable<any> => {
+        return this.http.get(`${this.API}/${dadoid}`);
+    }
+    public PutCombustivel = (dados: Historico): Observable<Historico> => {
+        return this.http.put<Historico>(this.API, dados);
     }
 }

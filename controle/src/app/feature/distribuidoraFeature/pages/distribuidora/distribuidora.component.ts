@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./distribuidora.component.css']
 })
 export class DistribuidoraComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }
+

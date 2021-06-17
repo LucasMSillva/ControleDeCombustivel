@@ -10,7 +10,10 @@ import { DistribuidoraComponent } from './distribuidora.component';
   ],
   imports: [
     CommonModule,
-    ListDistribuidoraModule
+    ListDistribuidoraModule,
+  ],
+  exports:[
+    DistribuidoraComponent
   ]
 })
 export class DistribuidoraModule { }

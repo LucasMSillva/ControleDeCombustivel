@@ -1,1 +1,31 @@
-<p>list-distribuidora works!</p>
+<div class="center" style="text-align: center;">
+    <p>List Distribuidora.</p>
+</div>
+
+<div class="container">
+    <li class="list-group-item d-flex justify-content-between align-items-start"
+    *ngFor="let dado of dados">
+        <div 
+        class="ms-2 me-auto"
+        >
+            <div class="fw-bold"> ID: {{ dado.id }} </div>
+            <div class="fw-bold"> Combustivel: {{ dado.combustivel }} </div>
+            <div class="fw-bold">  Data: {{ dado.data }} </div>
+            <div class="fw-bold"> Preço: {{ dado.preco }} </div>      
+        </div>
+
+    <button class="float-right"
+        type="button"
+        class="btn btn-outline-danger  mb-1 btn-sm" 
+        (click)="delete(dado.id)">
+        deletar
+    </button>
+       <button class="float-right"
+       type="button"
+       class="btn btn-outline-danger  mb-1 btn-sm" 
+       (click)="visualiza(dado.id)">
+       visualizar
+    </button>
+
+    </li>
+</div>

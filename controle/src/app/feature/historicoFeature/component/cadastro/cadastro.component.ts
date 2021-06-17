@@ -35,6 +35,7 @@ export class CadastroComponent implements OnInit {
         combustivel: this.form.get('combustivel')?.value,
         data: newData,
         preco: this.form.get('preco')?.value, 
+
 }
     this.HistoricoService.postPutCombustivel(dados).subscribe((res) => { console.log(' funcionou, varão') }, (error) => { console.log(error)})
     this.form.reset()
