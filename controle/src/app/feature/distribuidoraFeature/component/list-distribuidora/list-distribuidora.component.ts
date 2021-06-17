@@ -29,27 +29,4 @@ export class ListDistribuidoraComponent implements OnInit {
       });
   }
 
-  public delete(id:number): void {
-    this.HistoricoService.delete(id)
-    .subscribe(
-      (res) => {
-        console.log("sucesso");
-        this.getAll();
-      },
-     (error) => {
-       console.log(error);
-       this.getAll();
-     });
-  }
-
-  public visualiza(dadoid:number): void {
-    this.HistoricoService.getById(dadoid)
-    .subscribe(
-      (res) => {this.visual = res
-        console.log(this.visual);
-      },
-     (error) => {
-       console.log(error);
-     });
-  }
 }
