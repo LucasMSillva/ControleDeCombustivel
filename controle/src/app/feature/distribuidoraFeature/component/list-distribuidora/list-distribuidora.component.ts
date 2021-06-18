@@ -1,6 +1,6 @@
-import { Listagem } from './models/listagem';
 import { Component, OnInit } from '@angular/core'
 
+import { Listagem } from './models/listagem';
 import { DistribuidoraService } from '../../pages/distribuidora/service/distribuidora.service';
 
 @Component({
@@ -25,8 +25,7 @@ export class ListDistribuidoraComponent implements OnInit {
         this.dados = res.sort(function (a:any, b:any) {
           return a.id - b.id;
         }) 
-        this.dados .reverse();
+        this.dados .reverse(1);
       });
   }
-
 }

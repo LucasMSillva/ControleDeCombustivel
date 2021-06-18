@@ -8,18 +8,18 @@
         <div 
         class="ms-2 me-auto"
         >
-            <div class="fw-bold"> bandeira: {{ dado.bandeira }} </div>  
-            <div class="fw-bold"> codInstalacao: {{ dado.codInstalacao }} </div>      
-            <div class="fw-bold"> dataColeta: {{ dado.dataColeta }} </div>    
+            <div class="fw-bold"> Bandeira: {{ dado.bandeira }} </div>  
+            <div class="fw-bold"> Cod. Instalacao: {{ dado.codInstalacao }} </div>      
+            <div class="fw-bold"> Data da coleta: {{ dado.dataColeta | date: 'dd/MM/yyyy'}} </div>    
             <div class="fw-bold"> ID: {{ dado.id }} </div>
-            <div class="fw-bold"> municipio: {{ dado.municipio }} </div> 
-            <div class="fw-bold"> produto: {{ dado.produto }} </div>
-            <div class="fw-bold"> revendedora: {{ dado.revendedora }} </div> 
-            <div class="fw-bold"> siglaEstado: {{ dado.siglaEstado }} </div> 
-            <div class="fw-bold"> siglaRegiao: {{ dado.siglaRegiao }} </div> 
-            <div class="fw-bold"> unidadeMedida: {{ dado.unidadeMedida }} </div> 
-            <div class="fw-bold"> valorCompra: {{ dado.valorCompra }} </div> 
-            <div class="fw-bold"> valorVenda: {{ dado.valorVenda }} </div> 
+            <div class="fw-bold"> Municipio: {{ dado.municipio }} </div> 
+            <div class="fw-bold"> Produto: {{ dado.produto }} </div>
+            <div class="fw-bold"> Revendedora: {{ dado.revendedora }} </div> 
+            <div class="fw-bold"> Sigla do estado: {{ dado.siglaEstado }} </div> 
+            <div class="fw-bold"> sigla da região: {{ dado.siglaRegiao }} </div> 
+            <div class="fw-bold"> Unidade de medida: {{ dado.unidadeMedida }} </div> 
+            <div class="fw-bold"> Valor de mompra: {{ dado.valorCompra | currency  }} </div> 
+            <div class="fw-bold"> Valor de venda: {{ dado.valorVenda | currency }} </div> 
         </div>
     </li>
 </div>

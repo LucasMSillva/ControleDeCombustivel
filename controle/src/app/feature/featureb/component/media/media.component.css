@@ -1,0 +1,10 @@
+#dmediaa{
+    padding-bottom: 10px;
+    text-align: center;
+    background-color:bisque; 
+    height: 550px;
+    width: 600px;
+    border: 1px solid black;
+    overflow: auto;
+
+}

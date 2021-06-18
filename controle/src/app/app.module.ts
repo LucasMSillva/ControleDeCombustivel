@@ -8,7 +8,8 @@ import { MenuComponent } from './core/component/menu/menu.component';
 import { DistribuidoraComponent } from './feature/distribuidoraFeature/pages/distribuidora/distribuidora.component';
 import { ListDistribuidoraComponent } from './feature/distribuidoraFeature/component/list-distribuidora/list-distribuidora.component';
 import { HistoricoService } from './feature/historicoFeature/service/historico.service';
-
+import { MediaComponent } from './feature/featureb/component/media/media.component';
+import { MunicipioComponent } from './feature/municipio/municipio/municipio.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,14 @@ import { HistoricoService } from './feature/historicoFeature/service/historico.s
     MenuComponent,
     ListDistribuidoraComponent,
     DistribuidoraComponent,
+    MediaComponent,
+    MunicipioComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HistoricoModule
+    HistoricoModule,
   ],
   exports: [
     HistoricoService

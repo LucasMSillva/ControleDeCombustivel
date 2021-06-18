@@ -1,0 +1,16 @@
+<div class="container" style="text-align: center;">
+    <p></p>
+<div class="container" id="dmediaa">
+    <br>
+    <p>Média por Município</p>
+    <li class="list-group-item d-flex justify-content-between align-items-start"
+    *ngFor="let dado of dados">
+        <div 
+        class="ms-2 me-auto"
+        >
+            <div class="fw-bold"> atributo: {{ dado.atributo }} </div>  
+            <div class="fw-bold"> Média de valor de compra: {{ dado.mediaValorCompra | currency }} </div>      
+            <div class="fw-bold"> Média de valor de venda: {{ dado.mediaValorVenda | currency }} </div>    
+        </div>
+    </li>
+</div>
