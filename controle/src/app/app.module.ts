@@ -27,7 +27,7 @@ import { MunicipioComponent } from './feature/municipio/municipio/municipio.comp
     HistoricoModule,
   ],
   exports: [
-    HistoricoService
+    HistoricoService,
   ],
   providers: [HistoricoService],
   bootstrap: [AppComponent]

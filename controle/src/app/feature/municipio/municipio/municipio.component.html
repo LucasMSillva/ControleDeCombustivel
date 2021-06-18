@@ -1,30 +1,39 @@
-<div class="center" style="text-align: center;">
-    <p>municipio works!</p>
-    </div>
+<div class="center" style="text-align: center;" >
+    <p>Município</p>
+</div>
+
+<form  [formGroup]="form" class="form-vertical" (ngSubmit)="onSubmit()" id="munic" >
     
-    <form  [formGroup]="form" class="form-vertical" (ngSubmit)="onSubmit()" >
-    
-        <div class="form-group">
-            <label 
-                for="nome" 
-                class="control-label"
-            >
-               Município
-            </label>
-        <app-mensagem-error 
-            [mostrarErro]="verificaValidTouched('combustivel')"
-            msgErro='Município é Obrigatório'>
-        </app-mensagem-error>
-        <div class="botao" style="text-align: center;">
-        <button 
-            type="submit" 
-            class="btn btn-primary"
-        >
-            Enviar
-        </button>
-    
-    </div>
-    </form>
-    
-    
-    <!-- combustivel, data, id, preco -->
+   <div class="form-group">
+    <label  
+        for="nome" 
+        class="control-label"
+    >
+        Município
+    </label>
+
+    <input 
+        type="text"
+        class="form-control"
+        [ngClass]="erro('combustivel')"   
+        name="municipio" 
+        id="municipio" 
+        formControlName="municipio" 
+        placeholder="EX: João Pessoa"   
+    >    
+    <app-mensagem-error 
+    [mostrarErro]="verificaValidTouched('municipio')"
+    msgErro='Município é Obrigatório'>
+</app-mensagem-error>
+
+   </div>
+   <div class="botao" style="text-align: center;">
+    <button 
+        type="submit" 
+        class="btn btn-primary"
+    >
+        Enviar
+    </button>
+
+</div>
+</form>
