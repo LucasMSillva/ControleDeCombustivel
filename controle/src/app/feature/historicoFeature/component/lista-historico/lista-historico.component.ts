@@ -16,7 +16,7 @@ export class ListaHistoricoComponent implements OnInit {
   public visual!: historicoInterface;
   @Input() public dados: Array<historicoInterface> = [];
   @Output() pedido: EventEmitter<any> = new EventEmitter();
-  
+
 
   constructor(private HistoricoService:HistoricoService) {}
 
@@ -25,26 +25,10 @@ export class ListaHistoricoComponent implements OnInit {
   }  
 
   public delete(id:number): void {
-    this.HistoricoService.delete(id)
-    .subscribe(
-      (res) => {
-        console.log("sucesso");
-      },
-     (error) => {
-       console.log(error);
-     });
+    // this.deletar.emit(id);
   }
 
   public visualiza(dadoid:number): void {
     this.pedido.emit(dadoid);
-    // this.HistoricoService.getById(dadoid)
-    // .subscribe(
-    //   (res) => {
-    //     this.visual = res
-    //     console.log(this.visual);
-    //   },
-    //  (error) => {
-    //    console.log(error);
-    // });
   }
 }
