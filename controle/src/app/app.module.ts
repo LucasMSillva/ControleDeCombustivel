@@ -1,3 +1,4 @@
+import { MunicipioModule } from './feature/municipio/municipio/municipio.module';
 import { HistoricoModule } from './feature/historicoFeature/pages/historico/historico.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,7 +10,6 @@ import { DistribuidoraComponent } from './feature/distribuidoraFeature/pages/dis
 import { ListDistribuidoraComponent } from './feature/distribuidoraFeature/component/list-distribuidora/list-distribuidora.component';
 import { HistoricoService } from './feature/historicoFeature/service/historico.service';
 import { MediaComponent } from './feature/featureb/component/media/media.component';
-import { MunicipioComponent } from './feature/municipio/municipio/municipio.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +18,12 @@ import { MunicipioComponent } from './feature/municipio/municipio/municipio.comp
     ListDistribuidoraComponent,
     DistribuidoraComponent,
     MediaComponent,
-    MunicipioComponent,
-  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HistoricoModule,
+    MunicipioModule
   ],
   exports: [
     HistoricoService,

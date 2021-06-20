@@ -2,24 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { CadastroComponent } from './cadastro.component';
-import { MensagemErrorModule } from 'src/app/shared/mensagem-error/mensagem-error.module';
+
+
 import { HttpClientModule } from '@angular/common/http';
+import { MunicipioComponent } from './municipio.component';
+import { MensagemErrorModule } from 'src/app/shared/mensagem-error/mensagem-error.module';
+
 
 @NgModule({
   declarations: [
-    CadastroComponent,
+    MunicipioComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MensagemErrorModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   exports: [ 
-    CadastroComponent
+    MunicipioComponent
   ]
-
 })
-export class CadastroModule { }
+export class MunicipioModule { }

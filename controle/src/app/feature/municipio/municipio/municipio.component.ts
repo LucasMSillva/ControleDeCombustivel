@@ -1,9 +1,8 @@
-import { Municipio } from './../models/municipio';
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Municipio } from '../models/municipio';
-
+import { Municipio } from '../models/municipio.class.';
+import { MunicipioService } from './municipio.service';
 
 @Component({
   selector: 'app-municipio',
@@ -13,43 +12,47 @@ import { Municipio } from '../models/municipio';
 export class MunicipioComponent implements OnInit {
 
   public form!: FormGroup;
+  public mediaresult!: string;
 
-  constructor(private MunicipioService: MunicipioService) { }
+  constructor(private MunicipioService:MunicipioService) { }
 
-  public createForm(municipio: Municipio){
+  public createForm(municipio:Municipio ){
     this.form = new FormGroup({
       municipio: new FormControl(municipio.municipio,Validators.required),
   })
 }
 
   ngOnInit(): void {
+    this.createForm(new Municipio());
   }
 
-public onSubmit(){
-    if (this.form.valid) {
-      const data = this.form.get('data')?.value
-      const newData = data.split('-').reverse().join('/');
-      const dados = { 
-        combustivel: this.form.get('combustivel')?.value,
-        data: newData,
-        preco: this.form.get('preco')?.value, 
-
-}
-}
-}
-
-public verificaValidTouched(campo: string) {
-
-  return(
-     !this.form.get(campo)!.valid && 
-     (this.form.get(campo)!.touched || this.form.get(campo)!.dirty)
-  )
-}
-
-public erro(campo:any): any {
-  return {
-  'has-error': this.verificaValidTouched(campo),
-  'has-feedback': this.verificaValidTouched(campo) 
+  public onSubmit(){
+      if (this.form.valid) {
+        const dados = this.form.get('municipio')?.value;
+        this.MunicipioService.getByMunicipio(dados)
+        .subscribe(
+          (res) => { 
+          this.mediaresult = res;
+          }, 
+          (error) => {
+          console.log(error)
+          }
+        )
+        this.form.reset()
+        return;
+      }
   }
- }
+  public verificaValidTouched(campo: string) {
+    return(
+      !this.form.get(campo)!.valid && 
+      (this.form.get(campo)!.touched || this.form.get(campo)!.dirty)
+    )
+  }
+
+  public erro(campo:any): any {
+    return {
+    'has-error': this.verificaValidTouched(campo),
+    'has-feedback': this.verificaValidTouched(campo) 
+    }
+  }
 }

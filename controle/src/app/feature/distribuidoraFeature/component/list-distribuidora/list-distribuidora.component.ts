@@ -25,7 +25,7 @@ export class ListDistribuidoraComponent implements OnInit {
         this.dados = res.sort(function (a:any, b:any) {
           return a.id - b.id;
         }) 
-        this.dados .reverse(1);
+        // this.dados.reverse();
       });
   }
 }

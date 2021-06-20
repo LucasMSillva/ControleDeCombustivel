@@ -1,11 +1,11 @@
-
+import { MunicipioComponent } from './feature/municipio/municipio/municipio.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DistribuidoraComponent } from './feature/distribuidoraFeature/pages/distribuidora/distribuidora.component';
 import { HistoricoComponent } from './feature/historicoFeature/pages/historico/historico.component';
 import { MediaComponent } from './feature/featureb/component/media/media.component';
-import { MunicipioComponent } from './feature/municipio/municipio/municipio.component';
+import { MenuComponent } from './core/component/menu/menu.component';
 
 const routes: Routes = [
 { path: 'historico', component: HistoricoComponent },

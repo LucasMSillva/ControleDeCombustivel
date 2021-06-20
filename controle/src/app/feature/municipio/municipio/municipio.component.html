@@ -1,10 +1,10 @@
 <div class="center" style="text-align: center;" >
-    <p>Município</p>
+    <p></p>
 </div>
 
 <form  [formGroup]="form" class="form-vertical" (ngSubmit)="onSubmit()" id="munic" >
     
-   <div class="form-group">
+   <div class="form-group" [ngClass]="aplica">
     <label  
         for="nome" 
         class="control-label"
@@ -15,7 +15,7 @@
     <input 
         type="text"
         class="form-control"
-        [ngClass]="erro('combustivel')"   
+        [ngClass]="erro('municipio')"   
         name="municipio" 
         id="municipio" 
         formControlName="municipio" 
@@ -24,8 +24,7 @@
     <app-mensagem-error 
     [mostrarErro]="verificaValidTouched('municipio')"
     msgErro='Município é Obrigatório'>
-</app-mensagem-error>
-
+    </app-mensagem-error>
    </div>
    <div class="botao" style="text-align: center;">
     <button 
@@ -34,6 +33,7 @@
     >
         Enviar
     </button>
-
 </div>
+<br>
+    A media do municio é: {{ mediaresult }}
 </form>

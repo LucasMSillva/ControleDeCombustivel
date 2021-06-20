@@ -1,10 +1,15 @@
 <div class="container">
     <div class="row" style="padding-top: 20px;">
         <div class="col-md-4" id="cadastro">
-            <app-cadastro></app-cadastro>
+            <app-cadastro
+            
+            ></app-cadastro>
     </div>
 
     <div data-bs-spy="scroll" class="col-md-5 offset-md-1" id="lista" style=" padding-bottom: 40px;">
-    <app-lista-historico></app-lista-historico>
+    <app-lista-historico 
+    [dados] = "dados"
+    (pedido)="receberPedido($event)"
+    ></app-lista-historico>
     </div>
 </div>
