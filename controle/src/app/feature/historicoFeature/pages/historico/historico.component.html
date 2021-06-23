@@ -9,8 +9,8 @@
     <div data-bs-spy="scroll" class="col-md-5 offset-md-1" id="lista" style=" padding-bottom: 40px;">
     <app-lista-historico 
     [dados] = "dados"
-    (pedido)="receberPedido($event)"
-    (deletar)="receberPedido(delete)"
+    (pedido)="visualiza($event)"
+    (deletar)="deletarid()"
     ></app-lista-historico>
     </div>
 </div>

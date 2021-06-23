@@ -4,7 +4,7 @@ import { HistoricoService } from '../../service/historico.service';
 import { Historico as  historicoInterface } from './../cadastro/models/historico';
 
 
-
+// classe filho
 @Component({
   selector: 'app-lista-historico',
   templateUrl: './lista-historico.component.html',
@@ -17,6 +17,7 @@ export class ListaHistoricoComponent implements OnInit {
   @Input() public dados: Array<historicoInterface> = [];
   @Output() pedido: EventEmitter<any> = new EventEmitter();
 
+  @Output() deletar: EventEmitter<any> = new EventEmitter();
 
   constructor(private HistoricoService:HistoricoService) {}
 
@@ -25,7 +26,7 @@ export class ListaHistoricoComponent implements OnInit {
   }  
 
   public delete(id:number): void {
-    // this.deletar.emit(id);
+    this.deletar.emit(id);
   }
 
   public visualiza(dadoid:number): void {

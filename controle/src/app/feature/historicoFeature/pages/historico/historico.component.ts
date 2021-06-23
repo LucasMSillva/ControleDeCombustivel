@@ -1,7 +1,9 @@
+import { Historico } from './../../component/cadastro/models/historico';
 import { Component, OnInit } from '@angular/core';
 
 import { HistoricoService } from '../../service/historico.service';
 
+// classe pai
 @Component({
   selector: 'app-historico',
   templateUrl: './historico.component.html',
@@ -10,7 +12,7 @@ import { HistoricoService } from '../../service/historico.service';
 export class HistoricoComponent implements OnInit {
   public dados: any;
   pedido: any;
-  visual:any;
+  visual!:Historico;
 
   constructor(private HistoricoService:HistoricoService) {}
   
@@ -29,11 +31,11 @@ export class HistoricoComponent implements OnInit {
         this.dados .reverse();
       });
   }
-  public receberPedido(event: number): void {
-    console.log(event)
-  }
+  // public receberPedido(event: number): void {
+  //   console.log(event)
+  // }
 
-  public delete(id:number): void {
+  public deledarid(id: number): void {
     this.HistoricoService.delete(id)
     .subscribe(
       (res) => {
@@ -44,8 +46,8 @@ export class HistoricoComponent implements OnInit {
      });
   }
 
-  public visualiza(dadoid:number): void {
-     this.HistoricoService.getById(dadoid)
+  public visualiza(event:number): void {
+     this.HistoricoService.getById(event)
      .subscribe(
       (res) => {
       this.visual = res
